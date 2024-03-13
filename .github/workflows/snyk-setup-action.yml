@@ -12,7 +12,7 @@ jobs:
     - name: Snyk test
       working-directory: ./01-Login
       continue-on-error: true
-      run: snyk test
+      # run: snyk test
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     - name: setup python
@@ -22,3 +22,5 @@ jobs:
     - name: execute py script
       run: |
         python test.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -10,6 +10,7 @@ jobs:
       with:
         node-version: '20.x'
     - name: Snyk test
+      working-directory: ./01-Login
       run: snyk test
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

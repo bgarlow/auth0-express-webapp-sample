@@ -21,4 +21,6 @@ jobs:
         python-version: 3.8 #install python
     - name: execute py script
       run: |
-        GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} python test.py
+        python test.py
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 

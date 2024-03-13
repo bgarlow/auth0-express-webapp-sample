@@ -1,7 +1,7 @@
 import os
 import requests 
 
-print("Running the python script");
+print("Running the python script test.py");
 
 githubToken = os.environ['GITHUB_TOKEN']
 githubApiUrl = "https://api.github.com/repos/bgarlow/auth0-express-webapp-sample/issues"

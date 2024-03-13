@@ -7,7 +7,10 @@ githubApiUrl = "https://api.github.com/repos/bgarlow/auth0-express-webapp-sample
 print("Running the python script test.py")
 print("Endpoint URL: ", githubApiUrl)
 
+authHeaderValue = "Bearer " + githubToken
+
 headers = {
+    "Authorization": authHeaderValue,
     "Accept": "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28"
 }

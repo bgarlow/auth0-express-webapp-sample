@@ -15,3 +15,10 @@ jobs:
       run: snyk test
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version 3.8 #install python
+    - name: execute py script
+      run: |
+        python test.py

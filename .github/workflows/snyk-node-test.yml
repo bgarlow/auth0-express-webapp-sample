@@ -8,9 +8,8 @@ jobs:
         working-directory: ./01-Login
     steps:
       - uses: actions/checkout@master
-      - name: Check directory
-        echo "working-directory" << $GITHUB_OUTPUT
-        echo working-directory << $GITHUB_OUTPUT
+      - name: Check directory >> $GITHUB_OUTPUT
+        echo working-directory >> $GITHUB_OUTPUT
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:

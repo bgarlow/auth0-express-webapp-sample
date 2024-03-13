@@ -12,7 +12,7 @@ jobs:
     - name: Snyk test
       working-directory: ./01-Login
       continue-on-error: true
-      # run: snyk test
+      run: snyk help # TODO: change this back to test and add severity
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     - name: setup python

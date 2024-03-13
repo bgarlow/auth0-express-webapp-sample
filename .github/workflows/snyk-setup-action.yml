@@ -1,4 +1,4 @@
-name: Snyk example 
+name: Snyk run test and call python script
 on: push
 jobs:
   security:
@@ -20,7 +20,6 @@ jobs:
       with:
         python-version: 3.8 #install python
     - name: execute py script
-      run: |
-        python test.py
+      run: python test.py
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

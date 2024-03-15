@@ -16,7 +16,7 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     - name: asdf
-      run: cat ./vuln.json
+      run: cat vuln.json
     - name: setup python
       uses: actions/setup-python@v2
       with:

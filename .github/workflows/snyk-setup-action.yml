@@ -13,9 +13,10 @@ jobs:
       working-directory: ./01-Login
       continue-on-error: true
       run: snyk test --json-file-output=vuln.json #--severity-threshold=high
-      #run: snyk help # TODO: change this back to test and add severity
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    - name: asdf
+      run: cat ./vuln.json
     - name: setup python
       uses: actions/setup-python@v2
       with:

@@ -2,13 +2,14 @@ import os
 import requests
 import json
 
+workingDirectory = os.environ['WORKING_DIR']
 githubToken = os.environ['GITHUB_TOKEN']
 githubApiUrl = "https://api.github.com/repos/bgarlow/auth0-express-webapp-sample/issues"
 
 print("Running the python script test.py")
 print("Endpoint URL: ", githubApiUrl)
 
-with open("vuln.json") as file:
+with open(workingDirectory + "/vuln.json") as file:
     data = json.load(file)
 
 print("data: ", data)

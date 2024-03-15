@@ -12,10 +12,10 @@ jobs:
     - name: Snyk test
       working-directory: ./01-Login
       continue-on-error: true
-      run: snyk code test --json-file-output=vuln.json #--severity-threshold=high
+      run: snyk code test --json > vuln.json #--severity-threshold=high
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-    - name: asdf
+    - name: verify json output
       run: cat vuln.json
     - name: setup python
       uses: actions/setup-python@v2

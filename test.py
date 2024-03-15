@@ -9,7 +9,9 @@ githubApiUrl = "https://api.github.com/repos/bgarlow/auth0-express-webapp-sample
 print("Running the python script test.py")
 print("Endpoint URL: ", githubApiUrl)
 
-with open(workingDirectory + "/vuln.json") as file:
+jsonFilePath = workingDirectory + "/vuln.json"
+
+with open(jsonFilePath) as file:
     data = json.load(file)
 
 print("data: ", data)

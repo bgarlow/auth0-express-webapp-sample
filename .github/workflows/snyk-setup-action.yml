@@ -12,7 +12,7 @@ jobs:
     - name: Snyk test
       working-directory: ./01-Login
       continue-on-error: true
-      run: snyk code test --json > vuln.json #--severity-threshold=high
+      run: snyk test --json > vuln.json #--severity-threshold=high
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     - name: setup python

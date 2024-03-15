@@ -2,6 +2,8 @@ import os
 import requests
 import json
 
+from snyksummary import buildSnykSummary
+
 workingDirectory = os.environ['WORKING_DIR']
 githubToken = os.environ['GITHUB_TOKEN']
 githubApiUrl = "https://api.github.com/repos/bgarlow/auth0-express-webapp-sample/issues"
@@ -24,13 +26,17 @@ headers = {
     "X-GitHub-Api-Version": "2022-11-28"
 }
 
-issueBody = {
+summary = buildSnykSummary()
+
+issueRequest = {
     "title": "This is an issue submitted by the python script",
-    "body": "this is the body",
+    "body": summary,
     "assignees": ["bgarlow"],
     "labels": ["bug"]
 }
 
-response = requests.post(githubApiUrl, headers=headers, json=issueBody)
+print(issueRequest)
+
+response = requests.post(githubApiUrl, headers=headers, json=issueRequest)
 
 print(response.text)

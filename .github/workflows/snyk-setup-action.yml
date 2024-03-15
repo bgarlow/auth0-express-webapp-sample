@@ -12,7 +12,7 @@ jobs:
     - name: Snyk test
       working-directory: ./01-Login
       continue-on-error: true
-      run: snyk test --json-file-output=vuln.json #--severity-threshold=high
+      run: snyk code test --json-file-output=vuln.json #--severity-threshold=high
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     - name: asdf

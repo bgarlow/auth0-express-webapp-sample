@@ -16,9 +16,10 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     - name: check for json file
-      run: ls
-    - name: verify json output
-      run: cat vuln.json
+      run: |
+        ls
+        cd 01-Login
+        ls
     - name: setup python
       uses: actions/setup-python@v2
       with:

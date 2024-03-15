@@ -4,7 +4,7 @@ def buildIssueBlock(issue):
     id = issue["id"]
     title = issue["title"]
     version = issue["version"]
-    module = issue["module"]
+    #module = issue["module"]
     issueBlock = "ID: " + id + " Title: " + title + " Version: " + version
     return issueBlock
 

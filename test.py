@@ -13,10 +13,11 @@ print("Endpoint URL: ", githubApiUrl)
 
 jsonFilePath = workingDirectory + "/vuln.json"
 
+#TODO: address warning on open
 with open(jsonFilePath) as file:
     data = json.load(file)
 
-print("data: ", data)
+summary = buildSnykSummary(data)
 
 authHeaderValue = "Bearer " + githubToken
 
@@ -26,7 +27,7 @@ headers = {
     "X-GitHub-Api-Version": "2022-11-28"
 }
 
-summary = buildSnykSummary()
+#TODO: add assignees, etc .to issue?
 
 issueRequest = {
     "title": "This is an issue submitted by the python script",

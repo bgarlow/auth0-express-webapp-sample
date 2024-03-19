@@ -4,10 +4,10 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout
+    - uses: actions/checkout@v4
       with:
           ref: feature-decompose-py
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v4
       with: 
         repository: 'bgarlow/snyk-github'
     - uses: snyk/actions/setup@master

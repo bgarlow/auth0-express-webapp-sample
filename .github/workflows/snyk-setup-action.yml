@@ -1,4 +1,6 @@
 name: Snyk run test and call python script
+permissions:
+  contents: read
 on: push
 jobs:
   security:

@@ -33,6 +33,6 @@ jobs:
       run: | 
         echo ${{ github.workspace }}
         echo ${{ GITHUB.WORKSPACE }}
-        python ../../../snyk-github/snykgithubissue.py vuln.json
+        python ../../snyk-github/snykgithubissue.py vuln.json
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      

@@ -2,6 +2,9 @@
 # Created by https://www.gitignore.io/api/node
 # Edit at https://www.gitignore.io/?templates=node
 
+### json output from snyk code test ###
+vuln.json
+
 ### Node ###
 # Logs
 logs

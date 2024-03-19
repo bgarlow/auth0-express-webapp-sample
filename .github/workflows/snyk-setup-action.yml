@@ -30,6 +30,6 @@ jobs:
     - name: install requests
       run: python -m pip install requests
     - name: create github issue
-      run: python snykgithubissue.py vuln.json
+      run: python ../../snyk-github/snykgithubissue.py vuln.json
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      

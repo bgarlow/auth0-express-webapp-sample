@@ -31,7 +31,8 @@ jobs:
       run: python -m pip install requests
     - name: create github issue
       run: | 
-        echo: {{ $github.workspace }}
+        echo {{ $github.workspace }}
+        echo {{ $GITHUB.WORKSPACE }}
         run: python ../../../snyk-github/snykgithubissue.py vuln.json
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      

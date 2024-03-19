@@ -9,10 +9,12 @@ jobs:
     - uses: actions/checkout@v4
       with: 
         repository: bgarlow/github-issue
-        ref: main      
+        ref: main
+        path: createissue
     - uses: actions/checkout@v4
       with:
-          ref: feature-decompose-py
+        ref: feature-decompose-py
+        path: snyktest
     - uses: snyk/actions/setup@master
     - uses: actions/setup-node@v4
       with:
@@ -33,6 +35,6 @@ jobs:
       run: | 
         echo ${{ github.workspace }}
         echo ${{ GITHUB.WORKSPACE }}
-        python ../../snyk-github/snykgithubissue.py vuln.json
+        python ../createissue/snykgithubissue.py vuln.json
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      

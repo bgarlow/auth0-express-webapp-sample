@@ -33,4 +33,4 @@ jobs:
       run: python snykgithubissue.py vuln.json
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        WORKING_DIR: ./01-Login
+        WORKING_DIR: ../auth0-express-webapp-sample/01-Login

@@ -30,8 +30,7 @@ jobs:
     - name: install requests
       run: python -m pip install requests
     - name: create github issue
-      run: python snykgithubissue.py ./01-Login/vuln.json
+      working-directory: .
+      run: python snykgithubissue.py ../01-Login/vuln.json
       env: 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        TARGET_DIRECTORY: 01-login
-      
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      

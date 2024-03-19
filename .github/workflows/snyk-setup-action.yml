@@ -11,9 +11,8 @@ jobs:
           ref: feature-decompose-py
     - uses: actions/checkout@v4
       with: 
-        repository: bgarlow/snyk-github
+        repository: bgarlow/github-issue
         ref: main
-        token: ${{ secrets.PAT }}
     - uses: snyk/actions/setup@master
     - uses: actions/setup-node@v4
       with:
@@ -34,4 +33,4 @@ jobs:
       run: python snykgithubissue.py vuln.json
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        WORKING_DIR: /snyk-github
+        WORKING_DIR: /github-issue
